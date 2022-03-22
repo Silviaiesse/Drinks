@@ -1,0 +1,100 @@
+.title {
+    font-family: 'Space_Grotesk';
+    font-weight: 800;
+    font-size: 72px;
+    padding-left: 16px;
+    margin-top: -96px;
+    transition: 0.3s;
+    color: #212121;
+    z-index: 1;
+    position: absolute;
+    padding-left: 24px;
+
+}
+
+.title-hover {
+    opacity: 0;
+}
+
+h4 {
+    font-family: 'Roboto';
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 10;
+    padding-left: 24px;
+    padding-top: 24px;
+    padding-bottom: 64px;
+    color: #52A388;
+    padding-left: 24px;
+    transition: 0.3s;
+
+}
+
+.containerCard {
+    width: 18em;
+    text-align: left;
+    border-left: 1px solid #212121;
+    border-right: 1px solid #212121;
+    border-bottom: 1px solid #212121;
+    overflow: hidden;
+    transition: 0.4s;
+    padding-bottom: 24px;
+    background-color: aquamarine;
+
+}
+
+.imgDrink {
+    position: relative;
+    height: 250px;
+    transition: 0.4s;
+    filter: contrast(1.1) brightness(1.2);
+
+}
+
+img {
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    transition: 0.4s;
+}
+
+.containerCard:hover img {
+    transform: scale(100%);
+    filter: opacity(0.3);
+}
+
+.containerCard:hover .title {
+    display: none;
+}
+
+.containerCard:hover h4 {
+    color: white;
+}
+
+.containerCard:hover .title-hover {
+    opacity: 1;
+    font-family: 'Space_Grotesk';
+    font-size: 92px;
+    padding-left: 16px;
+    transition: 0.4s;
+    color: white;
+    position: absolute;
+}
+
+.containerCard:hover {
+    transform-origin: center;
+    transform: perspective(800px) rotateY(25deg);
+    border: none;
+    cursor: pointer;
+
+}
+
+.containerCard:hover .imgDrink {
+    text-decoration: underline;
+    background-color: #FFBF00;
+    transform: scale(100);
+    z-index: -1;
+}

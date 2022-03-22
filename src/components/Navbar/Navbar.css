@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    max-height: 50px;
+    background-color: aquamarine;
+    border-bottom: 1px solid #212121;
+    padding: 16px
+}
+
+
+.languages-container {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.navbar button {
+    border: none;
+    font-family: 'Space_Grotesk';
+    font-size: 20px;
+    padding: 8px;
+    background-color: aquamarine;
+}

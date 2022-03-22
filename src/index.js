@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf'
+import './fonts/Poppins/Poppins-Light.ttf'
 
 ReactDOM.render(
   <React.StrictMode>
