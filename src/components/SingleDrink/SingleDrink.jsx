@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
 import { useState, useEffect } from "react";
+import Navbar from '../Navbar/Navbar';
 import './SingleDrink.css';
 
 function SingleDrink({ idDrink }) {
@@ -21,13 +21,14 @@ function SingleDrink({ idDrink }) {
 
             //prelievo dei dati
             .then(dati => {
+                console.log(dati);
                 setErrore('');
                 setDrink(dati.drinks[0]);
             })
 
             //gestione errori
             .catch(err => {
-                console.errore('ops', err);
+                console.error('ops', err);
                 setErrore('Si è verificato un errore: ' + err);
             })
     };
@@ -55,9 +56,49 @@ function SingleDrink({ idDrink }) {
         <div>
             <Navbar />
             <div className="container-general">
+
                 <div className="container-left">
-                    <h1 className="nomeSingolo">{drink.strDrink}</h1>
-                    <h3 className="categoriaSingolo">{drink.strCategory}</h3>
+
+                    <div className="top">
+                        <h1 className="singleTitle">{drink.strDrink}</h1>
+                        <h3 className="singleCategory">{drink.strCategory}</h3>
+                    </div>
+                    <div className="bottom">
+                        <ul className="ingrList">
+                            {
+                                //map degli ingredienti da visualizzare con immagini relative e misure (se non ci sono inserisce "-")
+                                ingredients.map(function (indice) {
+                                    if (drink['strIngredient' + indice]) {
+                                        return (
+                                            <div key={indice} >
+                                                <li className="ingrediente">
+
+                                                    <div className="overlay">
+
+                                                        <img
+                                                            className="imgIngr"
+                                                            src={"https://www.thecocktaildb.com/images/ingredients/" + (drink['strIngredient' + indice]) + "-medium.png"}
+                                                            alt="ingrediente"
+                                                        />
+                                                        <h4 className="titoloIngr">{(drink['strIngredient' + indice])}</h4>
+                                                        <span className="misure">
+                                                            {(drink['strMeasure' + indice]) || '-'}
+                                                        </span>
+
+                                                        <div className="aggiungi">
+                                                            <div className="imgAggiungi"></div>
+                                                        </div>
+                                                    </div>
+
+                                                </li>
+                                            </div>
+                                        )
+                                    } else return null;
+                                })
+                            }
+                        </ul>
+                        <p className="preparazione">{drink.strInstructionsIT}</p>
+                    </div>
                 </div>
                 <div className="container-right">
                     <img className="imgSingolo" src={drink.strDrinkThumb} />
