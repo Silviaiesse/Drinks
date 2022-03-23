@@ -1,10 +1,135 @@
 .container-general {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: aquamarine;
+}
+
+.top {
     display: flex;
-    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    border-bottom: 1px solid #212121;
+
+}
+
+.imgSingolo {
+    filter: contrast(1.1) brightness(1.2);
+    height: 40vh;
+    position: absolute;
+    top: -10vh;
+    right: 40%;
+
+}
+
+.titleDrink {
+    padding-left: 48px;
+    align-self: center;
+    max-width: 40%;
+}
+
+
+.singleTitle {
+    text-align: left;
+    font-family: 'Space_Grotesk';
+    font-weight: 800;
+    font-size: 96px;
+    line-height: 86px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 48px;
+    color: #212121;
+}
+
+
+.glass {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    padding-right: 48px;
+}
+
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    min-height: 60vh;
+    width: 100%;
+    padding: 48px;
+    gap: 48px;
+}
+
+.ingrList {
+    display: flex;
+    justify-content: left;
+
+    gap: 32px;
+    flex-wrap: wrap;
+    list-style: none;
     width: 100%;
 }
 
+.imgIngr {
+    max-width: 180px;
+    margin-bottom: 24px;
+}
+
+.ingredient-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-left {
+    width: 50%;
+
+}
+
+.titoloIngr {
+    font-family: 'Space_Grotesk';
+    font-weight: 900;
+    font-size: 24px;
+    background-color: white;
+    padding: 8px 16px;
+}
+
+.misure {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 20px;
+    color: #212121;
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding: 8px 16px;
+}
+
 .container-right {
-    width: 500px;
-    background-color: aquamarine;
+    width: 50%;
+    padding-left: 48px;
+}
+
+.container-right h1 {
+    font-family: 'Space_Grotesk';
+    font-weight: 600;
+    font-size: 20px;
+    color: #212121;
+    text-transform: uppercase;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    letter-spacing: 0.12em;
+}
+
+.container-right p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 32px;
+    color: #212121;
 }

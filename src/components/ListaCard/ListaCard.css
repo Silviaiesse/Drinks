@@ -2,10 +2,9 @@
     display: flex;
     justify-content: right;
     flex-wrap: wrap;
-    justify-content: center;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    height: 100vh;
+    height: 100%;
     column-gap: 8px;
     width: 100%;
 }
@@ -24,7 +23,7 @@
     background-position-y: top;
     background-position-x: right;
     padding: 48px;
-    height: 100vh;
+    height: 90vh;
 }
 
 h2 {
@@ -50,7 +49,7 @@ h2 {
     display: flex;
     gap: 24px;
     background-color: aquamarine;
-    height: 100vh;
+    height: 90vh;
 }
 
 input {

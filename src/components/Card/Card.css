@@ -1,14 +1,16 @@
 .title {
     font-family: 'Space_Grotesk';
     font-weight: 800;
-    font-size: 72px;
+    font-size: 40px;
+    line-height: 40px;
     padding-left: 16px;
-    margin-top: -96px;
+    margin-top: -89px;
     transition: 0.3s;
     color: #212121;
     z-index: 1;
     position: absolute;
     padding-left: 24px;
+    padding-right: 24px;
 
 }
 
@@ -20,12 +22,12 @@ h4 {
     font-family: 'Roboto';
     font-size: 14px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 10;
     padding-left: 24px;
     padding-top: 24px;
-    padding-bottom: 64px;
-    color: #52A388;
+    padding-bottom: 72px;
+    color: #212121;
     padding-left: 24px;
     transition: 0.3s;
 
@@ -52,7 +54,7 @@ h4 {
 
 }
 
-img {
+.imgDrink img {
     object-fit: contain;
     position: absolute;
     top: 0;
@@ -71,16 +73,19 @@ img {
 }
 
 .containerCard:hover h4 {
-    color: white;
+    color: #FC6C85;
+    transform: translateY(20px);
 }
 
 .containerCard:hover .title-hover {
     opacity: 1;
     font-family: 'Space_Grotesk';
-    font-size: 92px;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 40px;
     padding-left: 16px;
-    transition: 0.4s;
-    color: white;
+    transition: 0.3s;
+    color: #1866E1;
     position: absolute;
 }
 

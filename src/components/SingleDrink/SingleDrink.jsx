@@ -10,7 +10,7 @@ function SingleDrink({ idDrink }) {
 
     useEffect(() => {
         fetchDrink()
-    }, [idDrink]); 
+    }, [idDrink]);
 
     const fetchDrink = function () {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + idDrink)
@@ -57,13 +57,22 @@ function SingleDrink({ idDrink }) {
             <Navbar />
             <div className="container-general">
 
-                <div className="container-left">
-
-                    <div className="top">
+                <div className="top">
+                    <div className="titleDrink">
                         <h1 className="singleTitle">{drink.strDrink}</h1>
                         <h3 className="singleCategory">{drink.strCategory}</h3>
                     </div>
-                    <div className="bottom">
+                    <img className="imgSingolo" src={drink.strDrinkThumb} />
+                    <div className="glass">
+                        <div>&#127864;</div>
+                        <p className="bicchiereSingolo"><b>{drink.strGlass}</b></p>
+                    </div>
+                </div>
+
+                <div className="bottom">
+
+                    <div className="container-left">
+
                         <ul className="ingrList">
                             {
                                 //map degli ingredienti da visualizzare con immagini relative e misure (se non ci sono inserisce "-")
@@ -71,25 +80,18 @@ function SingleDrink({ idDrink }) {
                                     if (drink['strIngredient' + indice]) {
                                         return (
                                             <div key={indice} >
-                                                <li className="ingrediente">
-
-                                                    <div className="overlay">
-
+                                                <li className="ingredient">
+                                                    <div className="ingredient-card">
                                                         <img
                                                             className="imgIngr"
                                                             src={"https://www.thecocktaildb.com/images/ingredients/" + (drink['strIngredient' + indice]) + "-medium.png"}
-                                                            alt="ingrediente"
+                                                            alt="ingredient"
                                                         />
-                                                        <h4 className="titoloIngr">{(drink['strIngredient' + indice])}</h4>
+                                                        <h2 className="titoloIngr">{(drink['strIngredient' + indice])}</h2>
                                                         <span className="misure">
                                                             {(drink['strMeasure' + indice]) || '-'}
                                                         </span>
-
-                                                        <div className="aggiungi">
-                                                            <div className="imgAggiungi"></div>
-                                                        </div>
                                                     </div>
-
                                                 </li>
                                             </div>
                                         )
@@ -97,11 +99,12 @@ function SingleDrink({ idDrink }) {
                                 })
                             }
                         </ul>
-                        <p className="preparazione">{drink.strInstructionsIT}</p>
                     </div>
-                </div>
-                <div className="container-right">
-                    <img className="imgSingolo" src={drink.strDrinkThumb} />
+                    <div className="container-right">
+                        <h1>How to prepare it</h1>
+                        <p className="instructions">{drink.strInstructions}</p>
+                    </div>
+
 
                 </div>
             </div>

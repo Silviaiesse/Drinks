@@ -14,7 +14,7 @@ const Card = ({ image, title, category, idDrink }) => {
                 navigazione("/drinks/" + idDrink);
             }}>
                 <h4 className="Alcohol">{category}</h4>
-                <h2 className="title-hover">{title}</h2>
+                <h2 className="title-hover">{title} &#8611;</h2>
                 <div className="imgDrink">
                     <h2 className="title">{title}</h2>
                     <img src={image} alt={title} />
