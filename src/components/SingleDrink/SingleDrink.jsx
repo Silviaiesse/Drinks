@@ -10,13 +10,13 @@ function SingleDrink({ idDrink }) {
 
     useEffect(() => {
         fetchDrink()
-    }, [idDrink]);
+    }, [idDrink]); 
 
     const fetchDrink = function () {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + idDrink)
 
-            .then(risposta => {
-                return risposta.json();
+            .then(response => {
+                return response.json();
             })
 
             //prelievo dei dati
